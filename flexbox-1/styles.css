@@ -1,5 +1,5 @@
 /*Base styles*/
-
+/* Mobile first design */
 body {
     background-color: hsl(35, 40%, 91%);
     color: hsl(25, 22%, 56%);
@@ -9,8 +9,9 @@ body {
 .container {
     background-color: hsl(35, 40%, 95%);
     border-radius: 4px;
-    width: 1200px;
     display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
 }
 
 .item {
@@ -19,6 +20,16 @@ body {
     border-radius: 4px;
     box-shadow: 2px 2px 4px hsl(35, 40%, 78%);
 }
-#aside {
-    width: 300px;
+
+/* Desktop screens */
+@media screen and (min-width: 576px) {
+    .container {
+        max-width: 1200px;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    #aside {
+        min-width: 300px;
+    }
 }
